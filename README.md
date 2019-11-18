@@ -11,3 +11,17 @@ This project provides below REST APIs for tweets :
 | Get a single tweet based on uid | GET      |    localhost:3000/api/tweets/5eb2e300-09d4-11ea-be0e-c50eed244eee |
 | Update tweet based on uid | PUT      |    localhost:3000/api/tweets/5eb2e300-09d4-11ea-be0e-c50eed244eee |
 | Delete tweet based on uid | DELETE      |    localhost:3000/api/tweets/5eb2e300-09d4-11ea-be0e-c50eed244eee |
+
+
+## Getting started
+```
+npm install
+npm run build
+npm start
+```
+
+## Run test cases
+```
+npm test
+```
+Currently test cases are failing :(
