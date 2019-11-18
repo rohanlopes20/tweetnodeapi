@@ -25,3 +25,14 @@ npm start
 npm test
 ```
 Currently test cases are failing :(
+
+## API requests
+
+```
+curl -H 'Content-Type: application/json' -X GET localhost:3000/api/tweets
+curl -H 'Content-Type: application/json' -X GET localhost:3000/api/tweets/04e33410-09de-11ea-ba9c-832e05e78bf1
+curl -H 'Content-Type: application/json' -X POST --data "{\"content\" : \"test\"}" localhost:3000/api/tweets
+curl -H 'Content-Type: application/json' -X PUT --data "{\"content\" : \"updated tweet\"}" localhost:3000/api/tweets/04e33410-09de-11ea-ba9c-832e05e78bf1
+curl -H 'Content-Type: application/json' -X DELETE localhost:3000/api/tweets/04e33410-09de-11ea-ba9c-832e05e78bf1
+
+```
