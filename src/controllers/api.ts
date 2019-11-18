@@ -13,13 +13,13 @@ export const getTweets = (req: Request, res: Response) => {
 
 	const tweets = Tweet.find(query, { uid:1, content : 1, created_at : 1, updated_at : 1, _id : 0 },  (err: any, tweets: any) => {
 		if (err) {
-			console.log("Error in getTweets api call : ", err);
+			console.error("Error in getTweets api call : ", err);
 			res.send({
 				message : "Error in getting tweets."
 			});
 	    } else {
-	    	let response = (Array.isArray(tweet) && tweet.length) ? tweet : { message : "No tweets."};
-			res.send(tweets);
+	    	let response = (Array.isArray(tweets) && tweets.length) ? tweets : { message : "No tweets."};
+			res.send(response);
 	    }
   	})
   	.limit(limit)
@@ -30,7 +30,7 @@ export const getTweetsByUid = (req: Request, res: Response) => {
 
     const tweet = Tweet.find({ uid: req.params.uid }, { uid:1, content : 1, created_at : 1, updated_at : 1, _id : 0 }, (err: any, tweet: any) => {
 	    if (err) {
-	    	console.log("Error in getTweetsByUid api call : ", err);
+	    	console.error("Error in getTweetsByUid api call : ", err);
 			res.send({
 				message : "Error in getting tweets."
 			});
@@ -50,7 +50,7 @@ export const createATweets = (req: Request, res: Response) => {
 
     tweet.save((err: any) => {
 		if (err) {
-			console.log("Error in createATweets api call : ", err);
+			console.error("Error in createATweets api call : ", err);
 			res.send({
 				message : "Error in creating tweets."
 			});
@@ -71,7 +71,7 @@ export const updateTweetsByUid = (req: Request, res: Response) => {
     
     const tweet = Tweet.findOneAndUpdate({ uid: uid }, tweetJson, (err: any, tweet: any) => {
 		if (err) {
-			console.log("Error in createATweets api call : ", err);
+			console.error("Error in createATweets api call : ", err);
 			res.send({
 				message : "Error in updating tweet."
 			});
@@ -88,7 +88,7 @@ export const deleteTweetsByUid = (req: Request, res: Response) => {
 
     const tweet = Tweet.deleteOne({ uid: uid }, (err: any) => {
 	    if (err) {
-			console.log("Error in deleteTweetsByUid api call : ", err);	    	
+			console.error("Error in deleteTweetsByUid api call : ", err);	    	
 			res.send({
 				message : "Error in deleting tweet!"
 			});
