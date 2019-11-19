@@ -7,6 +7,7 @@
     "build": "npm run build-ts",
     "serve": "node dist/server.js",
     "test": "jest --forceExit --coverage --verbose",
+    "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix",
     "build-ts": "tsc"
   },
   "author": "",
@@ -30,9 +31,13 @@
   },
   "devDependencies": {
     "@types/chai": "^4.2.5",
+    "@types/eslint": "^6.1.1",
     "@types/mocha": "^5.2.7",
     "@types/supertest": "^2.0.8",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
     "chai": "^4.2.0",
+    "eslint": "^6.6.0",
     "jest": "^24.9.0",
     "mocha": "^6.2.2",
     "request": "^2.88.0",

@@ -5,17 +5,17 @@ import { App } from "../src/app";
 describe("Waiting to connect to db", () => {
     it("waiting....", (done) => {
         setTimeout(() => {
-            done()
-        }, 1000)
+            done();
+        }, 1000);
     });
-})
+});
 
 describe("GET /api", () => {
     it("should return 404 NOT FOUND", () => {
         return request(App).get("/api")
             .expect(404);
     });
-})
+});
 
 describe("GET /api/tweets", () => {
     it("should return all tweets", (done) => {
