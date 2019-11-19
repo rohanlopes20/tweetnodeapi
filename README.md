@@ -24,7 +24,7 @@ npm start
 ```
 npm test
 ```
-Currently test cases are failing :(
+Currently test cases are failing :sweat:
 
 ## API requests
 
@@ -36,3 +36,13 @@ curl -H 'Content-Type: application/json' -X PUT --data "{\"content\" : \"updated
 curl -H 'Content-Type: application/json' -X DELETE localhost:3000/api/tweets/04e33410-09de-11ea-ba9c-832e05e78bf1
 
 ```
+
+## Get Tweet
+
+ Get tweet API provides options to retrive tweets. It also provides below options. By default it will return 10 tweets of 1st page.
+
+ | Detail        | Query Param  | Eg  |
+| ------------- |-------------| -----|
+| Get N page tweets     | page=<numOfPage> | localhost:3000/api/tweets?page=3 |
+| Get N tweets      | limit=<numOfTweets>      |   localhost:3000/api/tweets?limit=10 |
+| Search tweet by content | searchText=<contentToSearch>      |    localhost:3000/api/tweets?searchText=bla |

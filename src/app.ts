@@ -15,11 +15,12 @@ mongoose.connect(mongoUrl, {
 	useCreateIndex: true, 
 	useUnifiedTopology: true,
  	useFindAndModify: false 
- }).then(() => { 
-    	console.log('connected to db');
- }).catch(err => {
-    console.log('MongoDB connection error. Please make sure MongoDB is running. ' + err);
- });
+})
+.then(() => { 
+	console.log('connected to db');
+}).catch(err => {
+	console.error('MongoDB connection error. Please make sure MongoDB is running. ' + err);
+});
 
 
 app.set('port', process.env.PORT || 3000);
