@@ -6,10 +6,10 @@ import { v1 as uuid } from "uuid";
 
 
 export const getTweets = (req: Request, res: Response) => {
-	let searchQuery: string  = req.query.searchText || "";
-	let limit: number = (searchQuery == "") ?( parseInt(req.query.limit) || 10 ) : 0; 
-	let page: number  = (searchQuery == "") ? (req.query.page || 0) : 0; 
-	let query = (searchQuery == "") ? {} : { content : searchQuery };
+	const searchQuery: string  = req.query.searchText || "";
+	const limit: number = (searchQuery == "") ?( parseInt(req.query.limit) || 10 ) : 0; 
+	const page: number  = (searchQuery == "") ? (req.query.page || 0) : 0; 
+	const query = (searchQuery == "") ? {} : { content : searchQuery };
 
 	const tweets = Tweet.find(query, { uid:1, content : 1, created_at : 1, updated_at : 1, _id : 0 },  (err: any, tweets: any) => {
 		if (err) {
@@ -18,7 +18,7 @@ export const getTweets = (req: Request, res: Response) => {
 				message : "Error in getting tweets."
 			});
 	    } else {
-	    	let response = (Array.isArray(tweets) && tweets.length) ? tweets : { message : "No tweets."};
+	    	const response = (Array.isArray(tweets) && tweets.length) ? tweets : { message : "No tweets."};
 			res.send(response);
 	    }
   	})
@@ -35,7 +35,7 @@ export const getTweetsByUid = (req: Request, res: Response) => {
 				message : "Error in getting tweets."
 			});
 	    } else {
-	    	let response = (Array.isArray(tweet) && tweet.length) ? tweet : { message : "No tweets."};
+	    	const response = (Array.isArray(tweet) && tweet.length) ? tweet : { message : "No tweets."};
 			res.send(response);
 	    }
   	});
@@ -65,7 +65,7 @@ export const createATweets = (req: Request, res: Response) => {
 
 export const updateTweetsByUid = (req: Request, res: Response) => {
     const uid 	  = req.params.uid;
-    let tweetJson = req.body;
+    const tweetJson = req.body;
 
     tweetJson.updated_at = new Date();
     
