@@ -1,4 +1,4 @@
-# Tweet REST API
+# :bird: Tweet REST API
 
 This project provides below REST APIs for tweets :
 
@@ -13,14 +13,14 @@ This project provides below REST APIs for tweets :
 | Delete tweet based on uid | DELETE      |    localhost:3000/api/tweets/5eb2e300-09d4-11ea-be0e-c50eed244eee |
 
 
-## Getting started
+## :bulb: Getting started
 ```
 npm install
 npm run build
 npm start
 ```
 
-## API requests
+## :heavy_check_mark: API requests
 
 ```
 curl -H 'Content-Type: application/json' -X GET localhost:3000/api/tweets
@@ -31,7 +31,7 @@ curl -H 'Content-Type: application/json' -X DELETE localhost:3000/api/tweets/04e
 
 ```
 
-## Get Tweet
+## :eyes: Get Tweet
 
  Get tweet API provides options to retrive tweets. It also provides below options. By default it will return 10 tweets of 1st page.
 
@@ -41,7 +41,7 @@ curl -H 'Content-Type: application/json' -X DELETE localhost:3000/api/tweets/04e
 | Get N tweets      | limit=<numOfTweets>      |   localhost:3000/api/tweets?limit=10 |
 | Search tweet by content | searchText=<contentToSearch>      |    localhost:3000/api/tweets?searchText=bla |
 
-## Run test cases
+## :construction: Run test cases
 
 Currently test cases are failing :sweat:
 
